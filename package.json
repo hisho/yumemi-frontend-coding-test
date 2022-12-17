@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "run-p dev:*",
-    "dev:next": "next dev",
+    "dev:next": "next dev -p 3000",
     "build": "run-s build:next",
     "build:next": "next build",
     "start": "next start",
