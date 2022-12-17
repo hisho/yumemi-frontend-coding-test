@@ -1,21 +1,25 @@
 # 株式会社ゆめみフロントエンドコーディング試験
+
 https://notion.yumemi.co.jp/0e9ef27b55704d7882aab55cc86c999d
 
 ## 目次
+
 - [開発環境](#開発環境)
 - [セットアップ](#セットアップ)
 - [コマンド](#コマンド)
 - [トラブルシューティング](#トラブルシューティング)
 
 ## 開発環境
+
 - Node.js v18.x
 - Yarn v1.x
 - macOS Ventura
 
 ## セットアップ
 
-### 1.GitHubからリポジトリをクローン
-GitHubからリポジトリをクローンしてください。
+### 1.GitHub からリポジトリをクローン
+
+GitHub からリポジトリをクローンしてください。
 
 ```shell
 $ git clone git@github.com:hisho/yumemi-frontend-coding-test.git
@@ -23,13 +27,15 @@ $ cd yumemi-frontend-coding-test
 ```
 
 ### 2.依存パッケージのインストール
-package.jsonに記載されている依存パッケージをインストールしてください。
+
+package.json に記載されている依存パッケージをインストールしてください。
 
 ```shell
 $ yarn
 ```
 
 ### 3.開発環境を起動しブラウザで確認
+
 開発環境を起動し、ブラウザで確認してください。
 
 ```shell
@@ -38,7 +44,6 @@ $ open http://localhost:3000
 ```
 
 ## コマンド
-
 
 ### dev
 
@@ -56,10 +61,9 @@ Next.js の開発環境を起動する
 $ yarn dev:next
 ```
 
-***
+---
 
 ### build
-
 
 アプリケーションを本番用にビルドする
 
@@ -75,7 +79,7 @@ Next.js を本番用にビルドする
 $ yarn build:next
 ```
 
-***
+---
 
 ### start
 
@@ -85,7 +89,7 @@ Next.js を本番モードで起動する
 $ yarn start
 ```
 
-***
+---
 
 ### lint
 
@@ -119,7 +123,7 @@ tsc を実行する
 $ yarn lint:typecheck
 ```
 
-***
+---
 
 ### format
 
@@ -145,6 +149,6 @@ Prettier の--fix オプションを実行する
 $ yarn format:prettier
 ```
 
-
 ## トラブルシューティング
+
 [issue](https://github.com/hisho/yumemi-frontend-coding-test/issues/new)を作成または、ご連絡ください。
