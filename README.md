@@ -34,7 +34,18 @@ package.json に記載されている依存パッケージをインストール�
 $ yarn
 ```
 
-### 3.開発環境を起動しブラウザで確認
+### 3.env.localの設定
+.env.localを作成して追記してください。
+
+```shell
+$ touch .env.local
+```
+
+.env.exampleに従い環境変数を設定してください。
+
+RESAS_API_KEYは[こちら](https://opendata.resas-portal.go.jp)から取得してください。
+
+### 4.開発環境を起動しブラウザで確認
 
 開発環境を起動し、ブラウザで確認してください。
 
