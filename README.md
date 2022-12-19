@@ -160,6 +160,24 @@ Prettier の--fix オプションを実行する
 $ yarn format:prettier
 ```
 
+---
+
+### test
+
+すべてのtestを実行する
+
+```shell
+$ yarn test
+```
+
+### test:api
+
+Next.jsのapi routeのtestを実行する
+
+```shell
+$ yarn test:api
+```
+
 ## トラブルシューティング
 
 [issue](https://github.com/hisho/yumemi-frontend-coding-test/issues/new)を作成または、ご連絡ください。
