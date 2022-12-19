@@ -7,14 +7,17 @@ dotenv.config()
 
 dotenv.config({ path: path.resolve(__dirname, '.env.local') })
 
+const NEXT_PUBLIC_FRONTEND_URL =
+  process.env['NEXT_PUBLIC_FRONTEND_URL'] ?? 'http://localhost:3000'
+
 const config: PlaywrightTestConfig = {
   use: {
-    baseURL: process.env.NEXT_PUBLIC_FRONTEND_URL,
+    baseURL: NEXT_PUBLIC_FRONTEND_URL,
   },
   webServer: {
     command: 'yarn dev',
     reuseExistingServer: true,
-    url: process.env.NEXT_PUBLIC_FRONTEND_URL,
+    url: NEXT_PUBLIC_FRONTEND_URL,
   },
 }
 export default config
