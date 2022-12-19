@@ -16,7 +16,9 @@
     "lint:typecheck": "tsc --pretty --noEmit",
     "format": "run-s format:eslint format:prettier",
     "format:eslint": "yarn lint:next --fix",
-    "format:prettier": "yarn lint:prettier --write"
+    "format:prettier": "yarn lint:prettier --write",
+    "test": "run-s test:*",
+    "test:api": "playwright test src/pages/api"
   },
   "dependencies": {
     "next": "13.0.7",
@@ -27,6 +29,7 @@
   "devDependencies": {
     "@hisho/generate-env-declare": "^0.0.3",
     "@next/font": "13.0.7",
+    "@playwright/test": "^1.29.0",
     "@tsconfig/strictest": "^1.0.2",
     "@types/eslint": "8.4.10",
     "@types/node": "18.11.16",
@@ -35,6 +38,7 @@
     "@types/react-dom": "18.0.9",
     "@typescript-eslint/eslint-plugin": "^5.46.1",
     "@typescript-eslint/parser": "^5.46.1",
+    "dotenv": "^16.0.3",
     "eslint": "8.30.0",
     "eslint-config-next": "13.0.7",
     "eslint-plugin-import": "^2.26.0",
