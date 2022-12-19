@@ -5,8 +5,10 @@
   "scripts": {
     "dev": "run-p dev:*",
     "dev:next": "next dev -p 3000",
-    "build": "run-s build:next",
+    "dev:generate-env": "generate-env-declare --watch",
+    "build": "run-s build:generate-env build:next",
     "build:next": "next build",
+    "build:generate-env": "generate-env-declare",
     "start": "next start",
     "lint": "run-p lint:*",
     "lint:next": "next lint --dir src --ignore-path .prettierignore --max-warnings 0",
@@ -22,6 +24,7 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
+    "@hisho/generate-env-declare": "^0.0.3",
     "@next/font": "13.0.7",
     "@tsconfig/strictest": "^1.0.2",
     "@types/eslint": "8.4.10",
