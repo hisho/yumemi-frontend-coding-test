@@ -78,6 +78,14 @@ Next.js の開発環境を起動する
 $ yarn dev:next
 ```
 
+### dev:tcm
+
+src/**/*.module.cssの変更を監視し、型定義ファイルを出力する
+
+```shell
+$ yarn dev:tcm
+```
+
 ---
 
 ### build
@@ -95,6 +103,15 @@ Next.js を本番用にビルドする
 ```shell
 $ yarn build:next
 ```
+
+### build:tcm
+
+src/**/*.module.cssの型定義ファイルを出力する
+
+```shell
+$ yarn build:tcm
+```
+
 
 ---
 
@@ -140,6 +157,14 @@ tsc を実行する
 $ yarn lint:typecheck
 ```
 
+### lint:stylelint
+
+stylelint を実行する
+
+```shell
+$ yarn lint:stylelint
+```
+
 ---
 
 ### format
@@ -165,6 +190,15 @@ Prettier の--fix オプションを実行する
 ```shell
 $ yarn format:prettier
 ```
+
+### format:stylelint
+
+Stylelint の--fix オプションを実行する
+
+```shell
+$ yarn format:stylelint
+```
+
 
 ---
 
