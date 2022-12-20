@@ -6,8 +6,10 @@
     "dev": "run-p dev:*",
     "dev:next": "next dev -p 3000",
     "dev:generate-env": "generate-env-declare --watch",
-    "build": "run-s build:next",
+    "dev:tcm": "tcm -p 'src/**/*.module.css' . -w",
+    "build": "run-s build:tcm build:next",
     "build:next": "next build",
+    "build:tcm": "tcm -p 'src/**/*.module.css' .",
     "start": "next start",
     "lint": "run-p lint:*",
     "lint:next": "next lint --dir src --ignore-path .prettierignore --max-warnings 0",
@@ -50,6 +52,7 @@
     "postcss": "^8.4.20",
     "postcss-custom-media": "^9.0.1",
     "prettier": "^2.8.1",
+    "typed-css-modules": "^0.7.2",
     "typescript": "4.9.4"
   },
   "volta": {
