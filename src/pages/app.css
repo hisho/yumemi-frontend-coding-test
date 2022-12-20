@@ -1,0 +1,19 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:where(img, svg, canvas, iframe) {
+  display: block;
+}
+
+:where(body) {
+  font-family: system-ui, sans-serif;
+}
+
+:where(label) {
+  cursor: pointer;
+}
