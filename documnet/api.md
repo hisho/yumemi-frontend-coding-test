@@ -1,4 +1,4 @@
-# API仕様
+# API 仕様
 
 ## 都道府県取得
 
@@ -23,11 +23,11 @@
 
 ```ts
 type Prefecture = {
-    prefectureCode: number;
-    prefectureName: string;
-};
+  prefectureCode: number
+  prefectureName: string
+}
 
-type Prefectures = Prefecture[];
+type Prefectures = Prefecture[]
 ```
 
 ### 失敗
@@ -40,7 +40,6 @@ type Prefectures = Prefecture[];
 }
 ```
 
-
 ## 総人口取得
 
 - path : `/api/population/total?prefectureCode={number}`
@@ -49,6 +48,7 @@ type Prefectures = Prefecture[];
 ### 成功
 
 - HttpStatus:200
+
 ```json
 [
   {
@@ -65,39 +65,41 @@ type Prefectures = Prefecture[];
 
 ```ts
 type TotalPopulation = {
-  value: number;
-  year: number;
-};
+  value: number
+  year: number
+}
 
-type TotalPopulations = TotalPopulation[];
+type TotalPopulations = TotalPopulation[]
 ```
-
 
 ### 失敗
 
-#### prefectureCodeが指定されていない場合
+#### prefectureCode が指定されていない場合
 
 - HttpStatus:400
+
 ```json
 {
-    "message": "prefectureCodeは必須です。"
+  "message": "prefectureCodeは必須です。"
 }
 ```
 
-#### prefectureCodeがNumberにならない場合
+#### prefectureCode が Number にならない場合
 
 - HttpStatus:400
+
 ```json
 {
-    "message": "都道府県コードが不正です。"
+  "message": "都道府県コードが不正です。"
 }
 ```
 
-#### prefectureCodeは正常だが、データがない場合
+#### prefectureCode は正常だが、データがない場合
 
 - HttpStatus:404
+
 ```json
 {
-    "message": "データが存在しません。"
+  "message": "データが存在しません。"
 }
 ```
