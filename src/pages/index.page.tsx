@@ -1,5 +1,11 @@
+import { Content } from '@src/pages/content'
+
 const Page = () => {
-  return <>Next.js</>
+  return (
+    <>
+      <Content />
+    </>
+  )
 }
 
 export default Page
