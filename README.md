@@ -1,34 +1,183 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 株式会社ゆめみフロントエンドコーディング試験
 
-## Getting Started
+https://notion.yumemi.co.jp/0e9ef27b55704d7882aab55cc86c999d
 
-First, run the development server:
+## 目次
 
-```bash
-npm run dev
-# or
-yarn dev
+- [開発環境](#開発環境)
+- [セットアップ](#セットアップ)
+- [コマンド](#コマンド)
+- [トラブルシューティング](#トラブルシューティング)
+
+## 開発環境
+
+- Node.js v18.x
+- Yarn v1.x
+- macOS Ventura
+
+## セットアップ
+
+### 1.GitHub からリポジトリをクローン
+
+GitHub からリポジトリをクローンしてください。
+
+```shell
+$ git clone git@github.com:hisho/yumemi-frontend-coding-test.git
+$ cd yumemi-frontend-coding-test
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2.依存パッケージのインストール
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+package.json に記載されている依存パッケージをインストールしてください。
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+```shell
+$ yarn
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### 3.env.localの設定
+.env.localを作成して追記してください。
 
-## Learn More
+```shell
+$ touch .env.local
+```
 
-To learn more about Next.js, take a look at the following resources:
+.env.exampleに従い環境変数を設定してください。
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+RESAS_API_KEYは[こちら](https://opendata.resas-portal.go.jp)から取得してください。
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### 4.開発環境を起動しブラウザで確認
 
-## Deploy on Vercel
+開発環境を起動し、ブラウザで確認してください。
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```shell
+$ yarn dev
+$ open http://localhost:3000
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## コマンド
+
+### dev
+
+開発環境を起動する
+
+```shell
+$ yarn dev
+```
+
+### dev:next
+
+Next.js の開発環境を起動する
+
+```shell
+$ yarn dev:next
+```
+
+---
+
+### build
+
+アプリケーションを本番用にビルドする
+
+```shell
+$ yarn build
+```
+
+### build:next
+
+Next.js を本番用にビルドする
+
+```shell
+$ yarn build:next
+```
+
+---
+
+### start
+
+Next.js を本番モードで起動する
+
+```shell
+$ yarn start
+```
+
+---
+
+### lint
+
+リントを実行する
+
+```shell
+$ yarn lint
+```
+
+### lint:next
+
+Next.js の ESLint を実行する
+
+```shell
+$ yarn lint:next
+```
+
+### lint:prettier
+
+Prettier を実行する
+
+```shell
+$ yarn lint:prettier
+```
+
+### lint:typecheck
+
+tsc を実行する
+
+```shell
+$ yarn lint:typecheck
+```
+
+---
+
+### format
+
+format を実行する
+
+```shell
+$ yarn format
+```
+
+### format:eslint
+
+ESLint の--fix オプションを実行する
+
+```shell
+$ yarn format:eslint
+```
+
+### format:prettier
+
+Prettier の--fix オプションを実行する
+
+```shell
+$ yarn format:prettier
+```
+
+---
+
+### test
+
+すべてのtestを実行する
+
+```shell
+$ yarn test
+```
+
+### test:api
+
+Next.jsのapi routeのtestを実行する
+
+```shell
+$ yarn test:api
+```
+
+## トラブルシューティング
+
+[issue](https://github.com/hisho/yumemi-frontend-coding-test/issues/new)を作成または、ご連絡ください。
