@@ -21,7 +21,8 @@
     "format:prettier": "yarn lint:prettier --write",
     "format:stylelint": "stylelint --ignore-path .gitignore './src/**/*.css' --fix",
     "test": "run-s test:*",
-    "test:api": "playwright test src/pages/api"
+    "test:api": "playwright test src/pages/api -c playwright.config.api.ts",
+    "test:component": "playwright test src -c playwright.config.component.ts"
   },
   "dependencies": {
     "next": "13.0.7",
@@ -33,6 +34,7 @@
   "devDependencies": {
     "@hisho/generate-env-declare": "^0.0.3",
     "@next/font": "13.0.7",
+    "@playwright/experimental-ct-react": "^1.29.0",
     "@playwright/test": "^1.29.0",
     "@tsconfig/strictest": "^1.0.2",
     "@types/eslint": "8.4.10",
