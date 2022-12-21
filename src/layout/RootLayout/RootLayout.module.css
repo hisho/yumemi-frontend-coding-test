@@ -1,0 +1,10 @@
+.root {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100svh;
+}
+
+.main {
+  padding-block-start: 20px;
+  padding-block-end: 40px;
+}
