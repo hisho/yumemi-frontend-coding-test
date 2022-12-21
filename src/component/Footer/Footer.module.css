@@ -1,0 +1,26 @@
+.root {
+  background-color: rgb(var(--background) / var(--background-opacity));
+  container-type: inline-size;
+}
+
+.container {
+  padding-block: 20px;
+}
+
+@container (min-width: 600px) {
+  .container {
+    padding-block: 40px;
+  }
+}
+
+.copyright {
+  display: block;
+  font-size: 10px;
+  text-align: center;
+}
+
+@container (min-width: 600px) {
+  .copyright {
+    font-size: 12px;
+  }
+}
