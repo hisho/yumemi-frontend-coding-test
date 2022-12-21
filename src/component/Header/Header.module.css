@@ -1,0 +1,25 @@
+.root {
+  background-color: rgb(var(--background) / var(--background-opacity));
+  container-type: inline-size;
+}
+
+.container {
+  padding-block: 20px;
+}
+
+@container (min-width: 600px) {
+  .container {
+    padding-block: 30px;
+  }
+}
+
+.title {
+  font-size: 20px;
+  text-align: center;
+}
+
+@container (min-width: 600px) {
+  .title {
+    font-size: 32px;
+  }
+}
