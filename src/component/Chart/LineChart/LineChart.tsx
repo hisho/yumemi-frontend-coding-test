@@ -81,7 +81,7 @@ export const LineChart = ({ data, pointStart, title, xAxis, yAxis }: Props) => {
     }
   }, [data, pointStart, title, xAxis?.title, yAxis?.title])
 
-  const [windowWidth, setWindowWidth] = useState(0)
+  const [documentWidth, setDocumentWidth] = useState(0)
 
   /**
    * sizeが大きくなる時は、グラフのサイズが変わるが小さくなる場合はみ出すのでwindowのサイズに応じて再描画させる
@@ -89,11 +89,11 @@ export const LineChart = ({ data, pointStart, title, xAxis, yAxis }: Props) => {
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const handleResize = () => {
-        const width = window.innerWidth
+        const width = document.documentElement.clientWidth
         if (width >= 900) {
           return
         }
-        setWindowWidth(width)
+        setDocumentWidth(width)
       }
 
       window.addEventListener('resize', handleResize)
@@ -103,9 +103,10 @@ export const LineChart = ({ data, pointStart, title, xAxis, yAxis }: Props) => {
       return
     }
   }, [])
+
   return (
     <HighchartsReact
-      key={`LineChart_${windowWidth}`}
+      key={`LineChart_${documentWidth}`}
       highcharts={Highcharts}
       options={options}
     />
