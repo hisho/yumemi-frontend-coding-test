@@ -218,6 +218,14 @@ Next.jsのapi routeのtestを実行する
 $ yarn test:api
 ```
 
+### test:component
+
+componentのtestを実行する
+
+```shell
+$ yarn test:component
+```
+
 ## 👽API仕様
 <a href="./documnet/api.md">API仕様ドキュメント</a>
 
