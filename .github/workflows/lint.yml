@@ -20,5 +20,7 @@ jobs:
           cache-dependency-path: ./yarn.lock
       - name: Install dependencies
         run: yarn install
+      - name: Generate typed css modules
+        run: yarn build:tcm
       - name: Run lint
         run: yarn lint
