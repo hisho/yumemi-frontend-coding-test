@@ -1,7 +1,7 @@
 import Highcharts from 'highcharts'
 import HighchartsExporting from 'highcharts/modules/exporting'
 import HighchartsReact from 'highcharts-react-official'
-import { useMemo } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 
 type Props = {
   title: string
@@ -81,9 +81,33 @@ export const LineChart = ({ data, pointStart, title, xAxis, yAxis }: Props) => {
     }
   }, [data, pointStart, title, xAxis?.title, yAxis?.title])
 
+  const [windowWidth, setWindowWidth] = useState(0)
+
+  /**
+   * sizeが大きくなる時は、グラフのサイズが変わるが小さくなる場合はみ出すのでwindowのサイズに応じて再描画させる
+   */
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const handleResize = () => {
+        const width = window.innerWidth
+        if (width >= 900) {
+          return
+        }
+        setWindowWidth(width)
+      }
+
+      window.addEventListener('resize', handleResize)
+      handleResize()
+      return () => window.removeEventListener('resize', handleResize)
+    } else {
+      return
+    }
+  }, [])
   return (
-    <div>
-      <HighchartsReact highcharts={Highcharts} options={options} />
-    </div>
+    <HighchartsReact
+      key={`LineChart_${windowWidth}`}
+      highcharts={Highcharts}
+      options={options}
+    />
   )
 }
