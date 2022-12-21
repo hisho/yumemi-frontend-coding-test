@@ -1,3 +1,4 @@
+import { RootLayout } from '@src/layout/RootLayout/RootLayout'
 import { Content } from '@src/pages/content'
 import { Head } from '@src/pages/head'
 
@@ -5,7 +6,9 @@ const Page = () => {
   return (
     <>
       <Head />
-      <Content />
+      <RootLayout>
+        <Content />
+      </RootLayout>
     </>
   )
 }
