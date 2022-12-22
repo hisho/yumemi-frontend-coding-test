@@ -1,0 +1,8 @@
+.root {
+  --background-opacity: 0.8;
+
+  position: relative;
+  display: block;
+  overflow: hidden;
+  background-color: rgb(var(--background) / var(--background-opacity));
+}

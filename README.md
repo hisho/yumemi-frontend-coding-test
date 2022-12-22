@@ -2,11 +2,17 @@
 
 https://notion.yumemi.co.jp/0e9ef27b55704d7882aab55cc86c999d
 
+## 🚀URL
+https://hisho-yumemi-frontend-coding-test.vercel.app
+
+
+
 ## 目次
 
 - [開発環境](#開発環境)
 - [セットアップ](#セットアップ)
 - [コマンド](#コマンド)
+- [API仕様](#API仕様)
 - [トラブルシューティング](#トラブルシューティング)
 
 ## 開発環境
@@ -72,6 +78,14 @@ Next.js の開発環境を起動する
 $ yarn dev:next
 ```
 
+### dev:tcm
+
+src/**/*.module.cssの変更を監視し、型定義ファイルを出力する
+
+```shell
+$ yarn dev:tcm
+```
+
 ---
 
 ### build
@@ -89,6 +103,15 @@ Next.js を本番用にビルドする
 ```shell
 $ yarn build:next
 ```
+
+### build:tcm
+
+src/**/*.module.cssの型定義ファイルを出力する
+
+```shell
+$ yarn build:tcm
+```
+
 
 ---
 
@@ -134,6 +157,14 @@ tsc を実行する
 $ yarn lint:typecheck
 ```
 
+### lint:stylelint
+
+stylelint を実行する
+
+```shell
+$ yarn lint:stylelint
+```
+
 ---
 
 ### format
@@ -160,6 +191,15 @@ Prettier の--fix オプションを実行する
 $ yarn format:prettier
 ```
 
+### format:stylelint
+
+Stylelint の--fix オプションを実行する
+
+```shell
+$ yarn format:stylelint
+```
+
+
 ---
 
 ### test
@@ -172,11 +212,30 @@ $ yarn test
 
 ### test:api
 
-Next.jsのapi routeのtestを実行する
+拡張子が`*.api.spec.tsx`のapiのtestを実行する
 
 ```shell
 $ yarn test:api
 ```
+
+### test:component
+
+拡張子が`*.component.spec.tsx`のcomponentのtestを実行する
+
+```shell
+$ yarn test:component
+```
+
+### test:e2e
+
+拡張子が`*.e2e.spec.tsx`のe2eのtestを実行する
+
+```shell
+$ yarn test:e2e
+```
+
+## 👽API仕様
+<a href="./documnet/api.md">API仕様ドキュメント</a>
 
 ## トラブルシューティング
 

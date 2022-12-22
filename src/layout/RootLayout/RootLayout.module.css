@@ -1,0 +1,18 @@
+.root {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100svh;
+  container-type: inline-size;
+}
+
+.main {
+  padding-block-start: 20px;
+  padding-block-end: 40px;
+}
+
+@container (min-width: 600px) {
+  .main {
+    padding-block-start: 40px;
+    padding-block-end: 80px;
+  }
+}

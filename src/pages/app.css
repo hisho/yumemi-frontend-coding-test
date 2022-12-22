@@ -1,0 +1,58 @@
+:root {
+  --wrapper-padding-inline-size: 16px;
+  --wrapper-max-inline-size: 960px;
+  --background-body: 32 43 56; /* #202b38 */
+  --background-opacity: 1;
+  --background: 22 31 39; /* #161f27 */
+  --text-primary: 219 219 219; /* #dbdbdb */
+  --text-color-opacity: 1;
+
+  accent-color: rgb(144 237 125 / 100%);
+}
+
+@media (min-width: 600px) {
+  :root {
+    --wrapper-padding-inline-size: 20px;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:where(img, svg, canvas, iframe) {
+  display: block;
+}
+
+:where(label) {
+  cursor: pointer;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  color: rgb(var(--text-primary) / var(--text-color-opacity));
+  background-color: rgb(var(--background-body) / var(--background-opacity));
+}
+
+.wrapper {
+  width: 100%;
+  max-inline-size: var(--wrapper-max-inline-size);
+  padding-inline: var(--wrapper-padding-inline-size);
+  margin-inline: auto;
+}
+
+.highcharts-background,
+.highcharts-label-box.highcharts-tooltip-box {
+  --background-opacity: 0.8;
+
+  fill: rgb(var(--background) / var(--background-opacity));
+}
+
+/* inline styleに勝てないので!importantを使う */
+.highcharts-root text {
+  fill: rgb(var(--text-primary) / var(--text-color-opacity)) !important;
+}

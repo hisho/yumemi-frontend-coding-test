@@ -11,6 +11,7 @@ const NEXT_PUBLIC_FRONTEND_URL =
   process.env['NEXT_PUBLIC_FRONTEND_URL'] ?? 'http://localhost:3000'
 
 const config: PlaywrightTestConfig = {
+  testMatch: 'src/**/*.api.spec.ts',
   use: {
     baseURL: NEXT_PUBLIC_FRONTEND_URL,
   },
