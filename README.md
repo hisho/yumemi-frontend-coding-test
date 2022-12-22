@@ -212,7 +212,7 @@ $ yarn test
 
 ### test:api
 
-Next.jsのapi routeのtestを実行する
+拡張子が`*.api.spec.tsx`のapiのtestを実行する
 
 ```shell
 $ yarn test:api
@@ -220,10 +220,18 @@ $ yarn test:api
 
 ### test:component
 
-componentのtestを実行する
+拡張子が`*.component.spec.tsx`のcomponentのtestを実行する
 
 ```shell
 $ yarn test:component
+```
+
+### test:e2e
+
+拡張子が`*.e2e.spec.tsx`のe2eのtestを実行する
+
+```shell
+$ yarn test:e2e
 ```
 
 ## 👽API仕様

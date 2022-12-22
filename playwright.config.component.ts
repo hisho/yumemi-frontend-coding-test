@@ -29,8 +29,7 @@ const config: PlaywrightTestConfig = {
   /* The base directory, relative to the config file, for snapshot files created with toMatchSnapshot and toHaveScreenshot. */
   snapshotDir: './__snapshots__',
 
-  testDir: './src',
-  testIgnore: ['src/pages/api/**', 'src/pages/**/*.e2e.spec.ts'],
+  testMatch: 'src/**/*.component.spec.tsx',
 
   /* Maximum time one test can run for. */
   timeout: 10 * 1000,
