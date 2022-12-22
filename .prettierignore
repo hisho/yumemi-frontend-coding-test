@@ -5,3 +5,5 @@ node_modules
 README.md
 src/**/*.module.css.d.ts
 env.d.ts
+playwright
+playwright-report

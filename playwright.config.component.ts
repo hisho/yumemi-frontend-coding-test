@@ -30,7 +30,7 @@ const config: PlaywrightTestConfig = {
   snapshotDir: './__snapshots__',
 
   testDir: './src',
-  testIgnore: ['src/pages/api/**'],
+  testIgnore: ['src/pages/api/**', 'src/pages/**/*.e2e.spec.ts'],
 
   /* Maximum time one test can run for. */
   timeout: 10 * 1000,
