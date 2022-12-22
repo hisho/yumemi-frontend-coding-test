@@ -66,6 +66,7 @@ export const LineChart = ({ data, title, xAxis, yAxis }: Props) => {
         text: title,
       },
       xAxis: {
+        tickInterval: 5,
         title: {
           align: 'high',
           text: xAxis?.title ?? null,
