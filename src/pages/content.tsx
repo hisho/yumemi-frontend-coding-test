@@ -69,7 +69,12 @@ export const Content = () => {
       <div aria-hidden style={{ height: '10px' }} />
       <PrefectureCheckboxGroup onChange={handleChangeCheckbox} />
       <div aria-hidden style={{ height: '40px' }} />
-      <LineChart title={'総人口'} data={lineChartData} />
+      <LineChart
+        title={'総人口'}
+        xAxis={{ title: '年度' }}
+        yAxis={{ title: '人口数' }}
+        data={lineChartData}
+      />
     </div>
   )
 }
