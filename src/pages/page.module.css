@@ -1,0 +1,13 @@
+.root {
+  container-type: inline-size;
+}
+
+.prefectureTitle {
+  font-size: 20px;
+}
+
+@container (min-width: 600px) {
+  .prefectureTitle {
+    font-size: 28px;
+  }
+}
