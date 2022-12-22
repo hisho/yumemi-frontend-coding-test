@@ -48,15 +48,6 @@ export const LineChart = ({ data, title, xAxis, yAxis }: Props) => {
       exporting: {
         enabled: false,
       },
-      responsive: {
-        rules: [
-          {
-            condition: {
-              maxWidth: 500,
-            },
-          },
-        ],
-      },
       series: data.map(({ name, values }) => ({
         data: values,
         name,
