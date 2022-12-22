@@ -6,6 +6,8 @@
   --background: 22 31 39; /* #161f27 */
   --text-primary: 219 219 219; /* #dbdbdb */
   --text-color-opacity: 1;
+
+  accent-color: rgb(144 237 125 / 100%);
 }
 
 @media (min-width: 600px) {
