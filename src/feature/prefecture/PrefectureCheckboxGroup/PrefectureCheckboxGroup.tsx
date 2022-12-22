@@ -13,9 +13,6 @@ type Props = {
   }) => void
 }
 
-/**
- * TODO Skeletonを作成するしloadingのUIを置き換える
- */
 export const PrefectureCheckboxGroup = ({ onChange }: Props) => {
   const { data, isLoading } = useFetchPrefectures()
   return (
