@@ -226,6 +226,14 @@ componentのtestを実行する
 $ yarn test:component
 ```
 
+### test:e2e
+
+e2eのtestを実行する
+
+```shell
+$ yarn test:e2e
+```
+
 ## 👽API仕様
 <a href="./documnet/api.md">API仕様ドキュメント</a>
 
