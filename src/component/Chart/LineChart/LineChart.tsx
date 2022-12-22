@@ -12,12 +12,11 @@ type Props = {
     title: string
   }
   data: LineChartData
-  pointStart: number
 }
 
 export type LineChartData = {
   name: string
-  values: number[]
+  values: number[][]
 }[]
 
 /**
@@ -28,7 +27,7 @@ if (typeof Highcharts === 'object') {
   HighchartsExporting(Highcharts)
 }
 
-export const LineChart = ({ data, pointStart, title, xAxis, yAxis }: Props) => {
+export const LineChart = ({ data, title, xAxis, yAxis }: Props) => {
   const options: Highcharts.Options = useMemo(() => {
     return {
       colors: [
@@ -48,11 +47,6 @@ export const LineChart = ({ data, pointStart, title, xAxis, yAxis }: Props) => {
       },
       exporting: {
         enabled: false,
-      },
-      plotOptions: {
-        series: {
-          pointStart,
-        },
       },
       responsive: {
         rules: [
@@ -91,7 +85,7 @@ export const LineChart = ({ data, pointStart, title, xAxis, yAxis }: Props) => {
         },
       },
     }
-  }, [data, pointStart, title, xAxis?.title, yAxis?.title])
+  }, [data, title, xAxis?.title, yAxis?.title])
 
   const [documentWidth, setDocumentWidth] = useState(0)
 
