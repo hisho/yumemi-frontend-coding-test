@@ -42,3 +42,15 @@ body {
   padding-inline: var(--wrapper-padding-inline-size);
   margin-inline: auto;
 }
+
+.highcharts-background,
+.highcharts-label-box.highcharts-tooltip-box {
+  --background-opacity: 0.8;
+
+  fill: rgb(var(--background) / var(--background-opacity));
+}
+
+/* inline styleに勝てないので!importantを使う */
+.highcharts-root text {
+  fill: rgb(var(--text-primary) / var(--text-color-opacity)) !important;
+}

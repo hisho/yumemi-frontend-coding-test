@@ -31,6 +31,18 @@ if (typeof Highcharts === 'object') {
 export const LineChart = ({ data, pointStart, title, xAxis, yAxis }: Props) => {
   const options: Highcharts.Options = useMemo(() => {
     return {
+      colors: [
+        '#7cb5ec',
+        '#ffe4c4',
+        '#90ed7d',
+        '#f7a35c',
+        '#8085e9',
+        '#f15c80',
+        '#e4d354',
+        '#2b908f',
+        '#f45b5b',
+        '#91e8e1',
+      ],
       credits: {
         enabled: false,
       },
