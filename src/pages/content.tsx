@@ -3,8 +3,7 @@ import { fetchTotalPopulation } from '@src/feature/population/getTotalPopulation
 import { PrefectureCheckboxGroup } from '@src/feature/prefecture/PrefectureCheckboxGroup/PrefectureCheckboxGroup'
 import type { TotalPopulation } from '@src/model/population/totalPopulation'
 import styles from '@src/pages/page.module.css'
-import { useMemo, useState } from 'react'
-import { isArrayNotEmpty } from 'typesafe-utils'
+import { useState } from 'react'
 
 export const Content = () => {
   const [state, setState] = useState<
@@ -17,16 +16,9 @@ export const Content = () => {
     >
   >(new Map())
 
-  const minYear = useMemo(() => {
-    const years = Array.from(state).flatMap(([, value]) =>
-      value.data.map((v) => v.year)
-    )
-    return isArrayNotEmpty(years) ? Math.min(...years) : 0
-  }, [state])
-
   const lineChartData = Array.from(state).map(([, value]) => ({
     name: value.name,
-    values: value.data.map((data) => data.value),
+    values: value.data.map((data) => [data.year, data.value]),
   }))
 
   const setTotalPopulation = async (prefecture: {
@@ -77,7 +69,12 @@ export const Content = () => {
       <div aria-hidden style={{ height: '10px' }} />
       <PrefectureCheckboxGroup onChange={handleChangeCheckbox} />
       <div aria-hidden style={{ height: '40px' }} />
-      <LineChart title={'総人口'} data={lineChartData} pointStart={minYear} />
+      <LineChart
+        title={'総人口'}
+        xAxis={{ title: '年度' }}
+        yAxis={{ title: '人口数' }}
+        data={lineChartData}
+      />
     </div>
   )
 }
