@@ -2,6 +2,7 @@ import { LineChart } from '@src/component/Chart/LineChart/LineChart'
 import { fetchTotalPopulation } from '@src/feature/population/getTotalPopulation/getTotalPopulation'
 import { PrefectureCheckboxGroup } from '@src/feature/prefecture/PrefectureCheckboxGroup/PrefectureCheckboxGroup'
 import type { TotalPopulation } from '@src/model/population/totalPopulation'
+import styles from '@src/pages/page.module.css'
 import { useMemo, useState } from 'react'
 import { isArrayNotEmpty } from 'typesafe-utils'
 
@@ -71,8 +72,11 @@ export const Content = () => {
   }
 
   return (
-    <div>
+    <div className={styles.root}>
+      <p className={styles.prefectureTitle}>都道府県</p>
+      <div aria-hidden style={{ height: '10px' }} />
       <PrefectureCheckboxGroup onChange={handleChangeCheckbox} />
+      <div aria-hidden style={{ height: '40px' }} />
       <LineChart title={'総人口'} data={lineChartData} pointStart={minYear} />
     </div>
   )
