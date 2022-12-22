@@ -15,7 +15,7 @@ const config: PlaywrightTestConfig = {
   ],
   testMatch: 'src/**/*.e2e.spec.ts',
   use: {
-    baseURL: process.env.NEXT_PUBLIC_FRONTEND_URL || 'http://localhost:3000',
+    baseURL: process.env['NEXT_PUBLIC_FRONTEND_URL'] || 'http://localhost:3000',
     headless: true,
   },
 }
