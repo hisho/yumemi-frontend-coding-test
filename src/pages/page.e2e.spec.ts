@@ -5,7 +5,7 @@ test.describe('トップページテスト', () => {
     await page.goto('/')
     await expect(await page.locator('header')).toBeVisible()
     await expect(await page.locator('header h1').innerText()).toEqual(
-      process.env.NEXT_PUBLIC_TITLE
+      process.env['NEXT_PUBLIC_TITLE']
     )
   })
 
