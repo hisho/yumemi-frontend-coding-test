@@ -1,8 +1,10 @@
+'use client'
+
+import styles from '@app/(home)/page.module.css'
 import { LineChart } from '@src/component/Chart/LineChart/LineChart'
 import { fetchTotalPopulation } from '@src/feature/population/getTotalPopulation/getTotalPopulation'
 import { PrefectureCheckboxGroup } from '@src/feature/prefecture/PrefectureCheckboxGroup/PrefectureCheckboxGroup'
 import type { TotalPopulation } from '@src/model/population/totalPopulation'
-import styles from '@src/pages/page.module.css'
 import { useState } from 'react'
 
 export const Content = () => {

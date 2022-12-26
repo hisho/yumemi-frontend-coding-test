@@ -16,7 +16,7 @@ const config: PlaywrightTestConfig = {
       use: { ...devices['Desktop Chrome'] },
     },
   ],
-  testMatch: 'src/**/*.e2e.spec.ts',
+  testMatch: '{src,app}/**/*.e2e.spec.ts',
   use: {
     baseURL: NEXT_PUBLIC_FRONTEND_URL,
     headless: true,
