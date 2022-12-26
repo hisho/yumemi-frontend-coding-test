@@ -9,7 +9,9 @@ type Props = {
 const RootLayout = ({ children }: Props) => {
   return (
     <html>
-      <head />
+      <head>
+        <meta name="viewport" content="width=device-width" />
+      </head>
       <body>{children}</body>
     </html>
   )
