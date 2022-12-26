@@ -1,6 +1,7 @@
 import { Checkbox } from '@src/component/Form/Checkbox/Checkbox'
 import { FetchPrefectures } from '@src/feature/prefecture/FetchPrefectures/FetchPrefectures'
 import styles from '@src/feature/prefecture/PrefectureCheckboxGroup/PrefectureCheckboxGroup.module.css'
+import { memo } from 'react'
 
 type Props = {
   onChange?: ({
@@ -12,7 +13,7 @@ type Props = {
   }) => void
 }
 
-export const PrefectureCheckboxGroup = ({ onChange }: Props) => {
+export const PrefectureCheckboxGroup = memo(({ onChange }: Props) => {
   return (
     <div className={styles.root}>
       <div className={styles.container}>
@@ -42,4 +43,4 @@ export const PrefectureCheckboxGroup = ({ onChange }: Props) => {
       </div>
     </div>
   )
-}
+})

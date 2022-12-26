@@ -5,7 +5,7 @@ import { LineChart } from '@src/component/Chart/LineChart/LineChart'
 import { fetchTotalPopulation } from '@src/feature/population/getTotalPopulation/getTotalPopulation'
 import { PrefectureCheckboxGroup } from '@src/feature/prefecture/PrefectureCheckboxGroup/PrefectureCheckboxGroup'
 import type { TotalPopulation } from '@src/model/population/totalPopulation'
-import { useState } from 'react'
+import { useCallback, useState } from 'react'
 
 export const Content = () => {
   const [state, setState] = useState<
@@ -23,47 +23,50 @@ export const Content = () => {
     values: value.data.map((data) => [data.year, data.value]),
   }))
 
-  const setTotalPopulation = async (prefecture: {
-    name: string
-    code: number
-  }) => {
-    const data = await fetchTotalPopulation({
-      prefectureCode: prefecture.code,
-    })
-    setState((prevState) => {
-      const newState = new Map(prevState)
-      newState.set(prefecture.name, {
-        data,
-        name: prefecture.name,
+  const setTotalPopulation = useCallback(
+    async (prefecture: { name: string; code: number }) => {
+      const data = await fetchTotalPopulation({
+        prefectureCode: prefecture.code,
       })
-      return newState
-    })
-  }
+      setState((prevState) => {
+        const newState = new Map(prevState)
+        newState.set(prefecture.name, {
+          data,
+          name: prefecture.name,
+        })
+        return newState
+      })
+    },
+    []
+  )
 
-  const deleteTotalPopulation = (prefecture: {
-    name: string
-    code: number
-  }) => {
-    setState((prevState) => {
-      const newState = new Map(prevState)
-      newState.delete(prefecture.name)
-      return newState
-    })
-  }
+  const deleteTotalPopulation = useCallback(
+    (prefecture: { name: string; code: number }) => {
+      setState((prevState) => {
+        const newState = new Map(prevState)
+        newState.delete(prefecture.name)
+        return newState
+      })
+    },
+    []
+  )
 
-  const handleChangeCheckbox = async ({
-    isChecked,
-    prefecture,
-  }: {
-    isChecked: boolean
-    prefecture: { name: string; code: number }
-  }) => {
-    if (isChecked) {
-      await setTotalPopulation(prefecture)
-    } else {
-      deleteTotalPopulation(prefecture)
-    }
-  }
+  const handleChangeCheckbox = useCallback(
+    async ({
+      isChecked,
+      prefecture,
+    }: {
+      isChecked: boolean
+      prefecture: { name: string; code: number }
+    }) => {
+      if (isChecked) {
+        await setTotalPopulation(prefecture)
+      } else {
+        deleteTotalPopulation(prefecture)
+      }
+    },
+    [setTotalPopulation, deleteTotalPopulation]
+  )
 
   return (
     <div className={styles.root}>
