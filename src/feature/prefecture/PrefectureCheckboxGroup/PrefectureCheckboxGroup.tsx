@@ -1,7 +1,6 @@
 import { Checkbox } from '@src/component/Form/Checkbox/Checkbox'
-import { Skeleton } from '@src/component/Skeleton/Skeleton'
+import { FetchPrefectures } from '@src/feature/prefecture/FetchPrefectures/FetchPrefectures'
 import styles from '@src/feature/prefecture/PrefectureCheckboxGroup/PrefectureCheckboxGroup.module.css'
-import { useFetchPrefectures } from '@src/feature/prefecture/useFetchPrefectures/useFetchPrefectures'
 
 type Props = {
   onChange?: ({
@@ -14,20 +13,12 @@ type Props = {
 }
 
 export const PrefectureCheckboxGroup = ({ onChange }: Props) => {
-  const { data, isLoading } = useFetchPrefectures()
   return (
     <div className={styles.root}>
       <div className={styles.container}>
-        {isLoading
-          ? [...Array(47)].map((_, i) => (
-              <div
-                key={`PrefectureCheckboxGroup_loading_${i}`}
-                className={styles.label}
-              >
-                <Skeleton width={'100%'} height={'1.5em'} />
-              </div>
-            ))
-          : data.map(({ prefectureCode, prefectureName }, index) => (
+        <FetchPrefectures>
+          {(prefectures) =>
+            prefectures.map(({ prefectureCode, prefectureName }, index) => (
               <Checkbox
                 className={styles.label}
                 key={`PrefectureCheckboxGroup_${prefectureCode}_${index}`}
@@ -45,7 +36,9 @@ export const PrefectureCheckboxGroup = ({ onChange }: Props) => {
               >
                 {prefectureName}
               </Checkbox>
-            ))}
+            ))
+          }
+        </FetchPrefectures>
       </div>
     </div>
   )
